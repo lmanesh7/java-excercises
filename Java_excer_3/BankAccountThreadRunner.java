@@ -41,7 +41,7 @@ class TransThread extends Thread
                catch (InterruptedException e)
                {
                }
-               ft.amount = 2000.0;
+               ft.amount = 3000.0;
                System.out.println (ft.transName + " " + ft.amount);
                         }
            
@@ -55,7 +55,7 @@ class TransThread extends Thread
                catch (InterruptedException e)
                {
                }
-               ft.amount = 250.0;
+               ft.amount = 500.0;
                System.out.println (ft.transName + " " + ft.amount);
                
            }
