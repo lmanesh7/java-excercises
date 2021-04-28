@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Text_truncate</title>
+<script type="text/javascript">
+
+function text_truncate(x,y,z)
+{  
+	if(x!=null)
+	{
+	    if(y!=null)
+	    	{
+	    	if(z!=null)
+	    		{
+	    		  var res = x.slice(0,y);
+	    		  res += z;
+	    		  return res;
+	    		  
+	    		}
+	    	else{ z = "...";
+	    		var res = x.slice(0,y);
+	    		res += z;
+	    		return res;
+	    	}
+	    	}
+	    else
+	    {
+	    	
+	        return x;
+	    }
+	
+	
+	}
+
+	return alert("No string detected");
+}
+	
+	
+	
+
+document.write (text_truncate('We are doing JS string exercises.'));
+document.write("<br>");
+document.write (text_truncate('We are doing JS string exercises.',19));
+document.write("<br>");
+document.write (text_truncate('We are doing JS string exercises.',15,'!!'));
+</script>
+</head>
+<body>
+
+</body>
+</html>

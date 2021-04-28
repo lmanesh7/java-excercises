@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>second_highest_lowest</title>
+</head>
+<body>
+<script type="text/javascript">
+function Second_Greatest_Lowest(a)
+{   var arr_num = a;
+  arr_num.sort(function(x,y)
+           {
+           return x-y;
+           });
+  var result = [];
+  result.push(arr_num[1],arr_num[arr_num.length-2]);
+  return result.join(',');
+  getElementById("p1").innerHTML = arr_num[1];
+  document.write(" and ");
+  getElementById("p2").innerHTML = arr_num[arr_num.length-2];
+ 
+   
+   
+  }
+  
+
+
+document.write(Second_Greatest_Lowest([1,2,3,4,5]));
+
+
+</script>
+are Second Lowest and Second Highest<p id="p1"> </p>
+
+</body>
+</html>
