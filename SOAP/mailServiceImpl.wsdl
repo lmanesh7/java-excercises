@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://net.soap.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://net.soap.com" xmlns:intf="http://net.soap.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://net.soap.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="initializeProductCatalog">
+    <complexType/>
+   </element>
+   <element name="initializeProductCatalogResponse">
+    <complexType/>
+   </element>
+   <element name="searchById">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="searchByIdReturn" type="impl:EmailInfo"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="EmailInfo">
+    <sequence>
+     <element name="emailid" nillable="true" type="xsd:string"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="phoneNo" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <element name="getAllEmailInfos">
+    <complexType/>
+   </element>
+   <element name="getAllEmailInfosResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllEmailInfosReturn" type="impl:EmailInfo"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertProduct">
+    <complexType>
+     <sequence>
+      <element name="emailinfo" type="impl:EmailInfo"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertProductResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAllEmailInfosResponse">
+
+      <wsdl:part element="impl:getAllEmailInfosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="initializeProductCatalogRequest">
+
+      <wsdl:part element="impl:initializeProductCatalog" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertProductRequest">
+
+      <wsdl:part element="impl:insertProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="initializeProductCatalogResponse">
+
+      <wsdl:part element="impl:initializeProductCatalogResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchByIdResponse">
+
+      <wsdl:part element="impl:searchByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllEmailInfosRequest">
+
+      <wsdl:part element="impl:getAllEmailInfos" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchByIdRequest">
+
+      <wsdl:part element="impl:searchById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertProductResponse">
+
+      <wsdl:part element="impl:insertProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="mailServiceImpl">
+
+      <wsdl:operation name="initializeProductCatalog">
+
+         <wsdl:input message="impl:initializeProductCatalogRequest" name="initializeProductCatalogRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:initializeProductCatalogResponse" name="initializeProductCatalogResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchById">
+
+         <wsdl:input message="impl:searchByIdRequest" name="searchByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchByIdResponse" name="searchByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllEmailInfos">
+
+         <wsdl:input message="impl:getAllEmailInfosRequest" name="getAllEmailInfosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllEmailInfosResponse" name="getAllEmailInfosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertProduct">
+
+         <wsdl:input message="impl:insertProductRequest" name="insertProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertProductResponse" name="insertProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="mailServiceImplSoapBinding" type="impl:mailServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="initializeProductCatalog">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="initializeProductCatalogRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="initializeProductCatalogResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllEmailInfos">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllEmailInfosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllEmailInfosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="mailServiceImplService">
+
+      <wsdl:port binding="impl:mailServiceImplSoapBinding" name="mailServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/SOAPAssesment/services/mailServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
